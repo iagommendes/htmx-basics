@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Requisição com HTMX</title>
+    <script src="https://unpkg.com/htmx.org@1.8.0"></script>
+    <style>
+        #user-container {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .user {
+            margin-bottom: 10px;
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Usuários</h1>
+    <!-- Botão para buscar dados da API -->
+    <button 
+        hx-get="https://jsonplaceholder.typicode.com/users"
+        hx-target="#user-container"
+        hx-swap="innerHTML">
+        Carregar Usuários
+    </button>
+
+    <!-- Contêiner onde os dados serão exibidos -->
+    <div id="user-container">
+        <!-- Os dados da API aparecerão aqui -->
+    </div>
+
+</body>
+</html>
